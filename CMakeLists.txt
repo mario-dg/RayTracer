@@ -4,7 +4,7 @@ cmake_minimum_required(VERSION 3.16)
 # and the targets that do not specify a standard.
 # If not set, the latest supported standard for your compiler is used
 # You can later set fine-grained standards for each target using `target_compile_features`
-# set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 20)
 
 # Add project_options v0.13.1
 # https://github.com/cpp-best-practices/project_options
@@ -18,14 +18,14 @@ include(${_project_options_SOURCE_DIR}/Index.cmake)
 # run_vcpkg()
 
 # Set the project name and language
-project(myproject LANGUAGES CXX)
+project(raytracer LANGUAGES CXX)
 
 # Initialize project_options variable related to this project
 # This overwrites `project_options` and sets `project_warnings`
 # uncomment the options to enable them:
 project_options(
       ENABLE_CACHE
-      # WARNINGS_AS_ERRORS
+      WARNINGS_AS_ERRORS
       ENABLE_CPPCHECK
       ENABLE_CLANG_TIDY
       ENABLE_CONAN
@@ -40,7 +40,7 @@ project_options(
       # ENABLE_UNITY
       # ENABLE_SANITIZER_ADDRESS
       # ENABLE_SANITIZER_LEAK
-      # ENABLE_SANITIZER_UNDEFINED_BEHAVIOR
+      ENABLE_SANITIZER_UNDEFINED_BEHAVIOR
       # ENABLE_SANITIZER_THREAD
       # ENABLE_SANITIZER_MEMORY
       # CONAN_OPTIONS
