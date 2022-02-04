@@ -19,6 +19,7 @@
 # add_subdirectory(nana)
 
 find_package(spdlog)
+find_package(glm)
 find_package(docopt)
 
 # Generic test that uses conan libs
@@ -28,4 +29,5 @@ target_link_libraries(
   PRIVATE project_options
           project_warnings
           docopt::docopt
-          spdlog::spdlog)
+          spdlog::spdlog
+          glm::glm)
